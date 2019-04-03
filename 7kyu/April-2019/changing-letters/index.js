@@ -12,10 +12,11 @@ function swap(st){
     )
     {
       let capitalVowel = st.charAt[i].toUpperCase();
+      return capitalVowel;
     }
     else
     {
-      return;
+      return 
     }
   }
   return capitalVowel;// st with uppercased vowels 

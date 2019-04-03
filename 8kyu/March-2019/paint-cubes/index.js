@@ -1,7 +1,7 @@
 var countSquares = function(cuts){
   if(cuts == 0)
   {
-      return 1;
+    return 1;
   }
 
   let totalSquares = cuts + 1;

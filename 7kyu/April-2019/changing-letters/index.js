@@ -16,7 +16,7 @@ function swap(st){
     }
     else
     {
-      return 
+      return capitalVowel;
     }
   }
   return capitalVowel;// st with uppercased vowels 

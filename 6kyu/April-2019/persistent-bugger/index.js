@@ -4,19 +4,25 @@ function persistence(num)
   let splitString = numString.split("");
   var sum = 1;
   var grandTotal = 0;
+
   if(splitString.length == 1)
   {
     grandTotal = 0;
   }
   
-  // Loop to add to grandTotal
-  while(splitString.length > 1)
+  if(splitString.length > 1)
   {
-    for(i = 0; i < splitString.length; i++)
+    var grandSum = 10;
+    
+    while(grandSum > 9)
     {
-      sum = sum * splitString[i];
+      for(i = 0; i < splitString.length; i++)
+      {
+        grandSum = sum * splitString[i];
+        grandTotal++;
+      }
     }
-    grandTotal++;
+    return grandTotal;
   }
   
   console.log(splitString)

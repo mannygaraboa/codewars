@@ -16,3 +16,4 @@ function sum (numbers) {
   console.log(sum)
   return sum;
 };
+sum([4, 32, 10]);

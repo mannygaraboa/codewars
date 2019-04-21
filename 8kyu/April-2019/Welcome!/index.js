@@ -1,6 +1,6 @@
 function greet(language) {
-	var language = {
-    
+	var languages = {
+    english: 'Welcome',
     czech: 'Vitejte',
     danish: 'Velkomst',
     dutch: 'Welkom',
@@ -18,10 +18,8 @@ function greet(language) {
     swedish: 'Valkommen',
     welsh: 'Croeso'
   };
-  var english = {
-    welcome: 'Welcome'
-  };
-  return greet.language;
+
+  return languages.language;
 }
 
-greet(english.welcome);
+greet();

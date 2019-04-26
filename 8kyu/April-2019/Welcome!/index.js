@@ -19,7 +19,18 @@ function greet(language) {
     welsh: 'Croeso'
   };
 
-  return languages.language;
+  if(language == 'english')
+  {
+    return languages.english;
+  }
+  else if(language == 'czech')
+  {
+    return languages.czech;
+  }
+  else
+  {
+    return languages.english;
+  }
 }
 
 greet();

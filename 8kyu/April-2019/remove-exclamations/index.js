@@ -1,29 +1,29 @@
 function remove(s,n)
 {
-    let finalString = "";
-    let nCounter = 0;
-    for(let i = 0; i < s.length; i++)
+  let finalString = "";
+  let nCounter = 0;
+  for(let i = 0; i < s.length; i++)
+  {
+    var currentChar = s.charAt(i);
+    if(nCounter < n)
     {
-      var currentChar = s.charAt(i);
-      if(nCounter < n)
-      {
-        if(currentChar !== "!")
-        {
-          finalString += currentChar;
-          console.log(finalString);
-        }
-        else if(currentChar == "!")
-        {
-          nCounter++;
-        }
-      }
-      else
+      if(currentChar !== "!")
       {
         finalString += currentChar;
+        console.log(finalString);
+      }
+      else if(currentChar == "!")
+      {
+        nCounter++;
       }
     }
-    console.log(nCounter);
-    return finalString;
+    else
+    {
+      finalString += currentChar;
+    }
+  }
+  console.log(nCounter);
+  return finalString;
 }
 remove("!!!Hi!!!!", 5)
 

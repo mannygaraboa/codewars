@@ -24,8 +24,8 @@ function remove(s,n)
     }
     console.log(nCounter);
     return finalString;
-  }
-  remove("!!!Hi!!!!", 5)
+}
+remove("!!!Hi!!!!", 5)
 
 // Shorter Solution:
 

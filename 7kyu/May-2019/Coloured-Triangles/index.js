@@ -29,11 +29,11 @@ function triangle(row)
         }
       }
     }
-    firstRow = newRow;
+    lastColor = newRow;
     row = newRow;
     triangle(row);
     console.log(row);
-    return firstRow;
+    return lastColor;
   }
 }
 triangle("GRBBRBBRGRGBRGG");

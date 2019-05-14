@@ -3,9 +3,17 @@ var orderedCount = function (text) {
   for(let i = 0; i < text.length; i++)
   {
     let currentChar = text.charAt(i);
-    var arr = [currentChar , 0];
-
+    let nextChar = text.charAt(i + 1);
+    let charCount = 0;
+    var arr = [currentChar , charCount];
+    
+    if(currentChar != nextChar)
+    {
+      charCount++;
+    }
+    finalArr.push(arr)
   }
-
-  return [];
+  return finalArr;
 }
+orderedCount("abcabc")
+

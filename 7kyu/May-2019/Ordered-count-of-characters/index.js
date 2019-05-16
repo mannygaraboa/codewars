@@ -1,26 +1,31 @@
 var orderedCount = function (text) {
   let finalArr = [];
-  let charCount = 0;
-  // let currentChar = text.charAt(i);
-  // let nextChar = text.charAt(i + 1);
   for(let i = 0; i < text.length; i++)
   {
     let currentChar = text.charAt(i);
-    let arr = [currentChar , charCount];
-    for(let j = 0; j < text.length; j++)
+    let nextChar = text.charAt(i + 1)
+    if(currentChar != nextChar)
     {
-      let nextChar = text.charAt(j + 1);
-      if(currentChar == nextChar)
+      let re = new RegExp(currentChar, 'gi')
+      let match = text.match(re).length
+      let arr = [currentChar, match];
+      finalArr.push(arr)
+      for(let j = 0; j < text.length; j++)
       {
-        charCount++;
-        text = text.replace(nextChar, "")
+        let nextNextChar = text.charAt(j+1)
+        if(currentChar == nextNextChar)
+        {
+          text = text.replace(nextNextChar, "")
+          console.log(text)
+        }
       }
     }
-    finalArr.push(arr)
   }
   return finalArr;
 }
-orderedCount("aaabbb")
+orderedCount("abracadabra")
+
+// document.write(string.match(/a/gi).length);
 
 // Use the .match() property
 // Ex: let match = text.match(/a/gi). length 

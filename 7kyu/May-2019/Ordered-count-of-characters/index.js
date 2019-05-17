@@ -9,18 +9,10 @@ var orderedCount = function (text) {
       let re = new RegExp(currentChar, 'gi')
       let match = text.match(re).length
       let arr = [currentChar, match];
-      finalArr.push(arr)
-      for(let j = 0; j < text.length; j++)
-      {
-        let nextNextChar = text.charAt(j+1)
-        if(currentChar == nextNextChar)
-        {
-          text = text.replace(nextNextChar, "")
-          console.log(text)
-        }
-      }
+      finalArr.push(arr);
     }
   }
+  // console.log((finalArr[2])[0])
   return finalArr;
 }
 orderedCount("abracadabra")

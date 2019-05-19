@@ -12,10 +12,26 @@ var orderedCount = function (text) {
       finalArr.push(arr);
     }
   }
-  // console.log((finalArr[2])[0])
+
+  for(let i = 0; i < finalArr.length; i++)
+  {
+    console.log("i = " + i)
+    for(let j = 0; j < finalArr.length; j++)
+    {
+      if(finalArr[i] == finalArr[j + 1])
+      {
+        console.log("j = " + j)
+        finalArr.splice(j+1,1)
+      }
+    }
+  }
   return finalArr;
 }
 orderedCount("abracadabra")
+// abrcd
+
+// console.log((finalArr[2])[0]);
+// This shows the first element in the third index of finalArr.
 
 // document.write(string.match(/a/gi).length);
 

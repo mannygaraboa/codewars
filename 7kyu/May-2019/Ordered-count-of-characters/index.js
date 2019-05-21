@@ -12,29 +12,29 @@ var orderedCount = function (text) {
       finalArr.push(arr);
     }
   }
+  finalArr.push(firstArr[0]);
 
-  // Examples of how to call a letter in a array within the finalArr
-  // console.log((finalArr[0])[0]);
-  // console.log((finalArr[4])[0]);
-
-  for(let i = 0; i < finalArr.length; i++)
+  for(let i = 0; i < firstArr.length; i++)
   {
-    console.log((finalArr[i])[0]);
+    let result = true;
     for(let j = 0; j < finalArr.length; j++)
     {
-      console.log((finalArr[j+1])[0])
-      if((finalArr[i])[0] == (finalArr[j+1])[0])
+      if((firstArr[i])[0] == (finalArr[j][0]))
       {
-        console.log((finalArr[i])[0] + "=" + (finalArr[j+1])[0]);
-        finalArr.splice(j+1,1);
-        j--;
+        result = false;
       }
+    }
+
+    if(result == true)
+    {
+      finalArr.push(firstArr[i]);
     }
   }
   return finalArr;
 }
 orderedCount("abracadabra")
-// abrcd
+// Given the text it should return the letters "abrcd"
+
 
 // console.log((finalArr[2])[0]);
 // This shows the first element in the third index of finalArr.
@@ -44,4 +44,8 @@ orderedCount("abracadabra")
 // Use the .match() property
 // Ex: let match = text.match(/a/gi). length 
 // This returns the number of times the letter 'a' appears in the string 'text'
+
+// Shorter Solution:
+// const orderedCount = s =>
+//   Array.from(s.split('').reduce((m, k) => m.set(k, m.has(k) ? m.get(k) + 1 : 1), new Map()));
 

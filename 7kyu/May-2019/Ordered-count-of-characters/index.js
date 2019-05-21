@@ -13,15 +13,21 @@ var orderedCount = function (text) {
     }
   }
 
+  // Examples of how to call a letter in a array within the finalArr
+  // console.log((finalArr[0])[0]);
+  // console.log((finalArr[4])[0]);
+
   for(let i = 0; i < finalArr.length; i++)
   {
-    console.log("i = " + i)
+    console.log((finalArr[i])[0]);
     for(let j = 0; j < finalArr.length; j++)
     {
-      if(finalArr[i] == finalArr[j + 1])
+      console.log((finalArr[j+1])[0])
+      if((finalArr[i])[0] == (finalArr[j+1])[0])
       {
-        console.log("j = " + j)
-        finalArr.splice(j+1,1)
+        console.log((finalArr[i])[0] + "=" + (finalArr[j+1])[0]);
+        finalArr.splice(j+1,1);
+        j--;
       }
     }
   }

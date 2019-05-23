@@ -1,4 +1,4 @@
-function greet(language) {
+var greet = function (language) {
 	var languages = {
     english: 'Welcome',
     czech: 'Vitejte',
@@ -18,7 +18,6 @@ function greet(language) {
     swedish: 'Valkommen',
     welsh: 'Croeso'
   };
-
   if(language == 'english')
   {
     return languages.english;
@@ -44,7 +43,7 @@ function greet(language) {
   {
     return languages.finnish;
   }
-  else if(language == 'flesmish')
+  else if(language == 'flemish')
   {
     return languages.flemish;
   }
@@ -88,11 +87,35 @@ function greet(language) {
   {
     return languages.welsh;
   }
-  
   else
   {
     return languages.english;
   }
 }
-
 greet();
+
+// Shorter Solution
+
+// function greet(language) {
+//   var GreetingsDB = {
+//     english: 'Welcome',
+//     czech: 'Vitejte',
+//     danish: 'Velkomst',
+//     dutch: 'Welkom',
+//     estonian: 'Tere tulemast',
+//     finnish: 'Tervetuloa',
+//     flemish: 'Welgekomen',
+//     french: 'Bienvenue',
+//     german: 'Willkommen',
+//     irish: 'Failte',
+//     italian: 'Benvenuto',
+//     latvian: 'Gaidits',
+//     lithuanian: 'Laukiamas',
+//     polish: 'Witamy',
+//     spanish: 'Bienvenido',
+//     swedish: 'Valkommen',
+//     welsh: 'Croeso'
+//   }, 
+//   defaultLanguage = 'english';
+//   return GreetingsDB[language] || GreetingsDB[defaultLanguage];
+// }

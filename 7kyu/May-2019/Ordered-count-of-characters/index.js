@@ -32,6 +32,7 @@ var orderedCount = function (text) {
       finalArr.push(firstArr[i]);
     }
   }
+  console.log(finalArr);
   return finalArr;
 }
 orderedCount("abracadabra")

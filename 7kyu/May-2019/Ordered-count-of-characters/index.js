@@ -1,4 +1,5 @@
 var orderedCount = function (text) {
+  let firstArr = [];
   let finalArr = [];
   for(let i = 0; i < text.length; i++)
   {
@@ -9,9 +10,10 @@ var orderedCount = function (text) {
       let re = new RegExp(currentChar, 'gi')
       let match = text.match(re).length
       let arr = [currentChar, match];
-      finalArr.push(arr);
+      firstArr.push(arr);
     }
   }
+
   finalArr.push(firstArr[0]);
 
   for(let i = 0; i < firstArr.length; i++)

@@ -1,7 +1,9 @@
 function swap(st){
-  for (var i = 0; i < st.length; i++) {
-  
-  console.log(st.charAt(i));
+  let finalString = "";
+  for (let i = 0; i < st.length; i++) 
+  {
+    let currentLetter = st.charAt(i);
+    let capitalVowel = currentLetter.toUpperCase();
     
     if(
     st.charAt(i) == "a" ||
@@ -11,13 +13,19 @@ function swap(st){
     st.charAt(i) == "u" 
     )
     {
-      let capitalVowel = st.charAt[i].toUpperCase();
-      return capitalVowel;
+      finalString += capitalVowel;
     }
     else
     {
-      return capitalVowel;
+      finalString += currentLetter;
     }
   }
-  return capitalVowel;// st with uppercased vowels 
+  return finalString;
 }
+swap("hello")
+
+// Shorter Solution:
+
+// function swap(st){
+//   return st.replace(/[aeiou]/g, v => v.toUpperCase() )
+// }//z.

@@ -1,21 +1,18 @@
 function isPrime(num) {
-  if(num < 0)
-  {
-    return false;
-  }
-  
   var bool = true;
-  for(let i = 0; i < num; i++)
+  if(num <= 1)
   {
-    // while(bool = true)
-    // {
-      if(num % i == 0)
-      {
-        // bool = false;
-        console.log(i + ":" + bool)
-      }
-    // }
+    bool = false;
+    return bool;
+  }
+
+  for(let i = 2; i < num; i++)
+  {
+    if(num % i == 0)
+    {
+      bool = false;
+    }
   }
   return bool;
 }
-isPrime()
+isPrime(5)

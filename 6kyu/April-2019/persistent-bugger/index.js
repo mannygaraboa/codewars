@@ -20,9 +20,13 @@ function persistence(num)
       sum = sum * splitString[i];
       total++;
     }
+    console.log(splitString)
+    console.log(sum);
+    newNum = sum;
+    let newNumString = newNum.toString();
+    let newSplitString = newNumString.split("");
+    grandTotal++;
   }
-  console.log(splitString)
-  console.log(sum);
   return total;
 }
-persistence(4)
+persistence(452)

@@ -1,26 +1,32 @@
 var whatTimeIsIt = function(angle) {
   let hour = 00;
   let minute = 00;
+  let difference = 360 - angle;
   if(angle <= 29.9)
   {
     hour = 12;
+    for(let i = 0; i < angle; i+=0.5)
+    {
+      minute += 1;
+    }
   }
-  else
-  {
-    hour = 1;
-  }
+
   if(angle >= 30)
   {
+    for(let i = 0; i < angle; i+=30)
+    {
+      hour += 1;
+    }
 
-  }
-  for(let i = 0; i < angle; i+=0.5)
-  {
-    minute += 1;
+    for(let i = 0; i < difference; i+=0.5)
+    {
+      minute += 1;
+    }
   }
  
   return hour + ":" + minute;
 }
-whatTimeIsIt(2);
+whatTimeIsIt(30);
 
 // 12:01 = 0.5 degrees
 // 12:02 = 1 degree

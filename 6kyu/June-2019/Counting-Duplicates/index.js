@@ -5,14 +5,15 @@ function duplicateCount(text){
   for(let i = 0; i < text.length; i++)
   {
     let currentChar = text.charAt(i);
-    let re = new RegExp(currentChar, 'g');
+    let upperChar = currentChar.toUpperCase();
+    let re = new RegExp(upperChar, 'gi');
     let match = text.match(re).length;
-    let arr = [currentChar, match];
+    let arr = [upperChar, match];
     firstArr.push(arr);
   }
 
   finalArr.push(firstArr[0]);
-  if((finalArr[0])[1] > 1)
+  if(((finalArr[0])[1]) > 1)
   {
     count++;
   }
@@ -22,23 +23,23 @@ function duplicateCount(text){
     let bool = true;
     for(let j = 0; j < finalArr.length; j++)
     {
-      if((firstArr[i])[0] = ((finalArr[j])[0]))
+      if(((firstArr[i])[0]) == ((finalArr[j])[0]))
       {
         bool = false;
       }
     }
 
-    if(bool == true && (firstArr[i])[1] > 1)
+    if(bool == true && ((firstArr[i])[1]) > 1)
     {
       finalArr.push(firstArr[i])
       count++;
     }
   }
-
-  console.log(finalArr);
+  // console.log(firstArr);
+  // console.log(finalArr);
   return count;
 }
-duplicateCount("helLo");
+duplicateCount("eEhHeElL123321o");
   
 // Syntax for match(): string.match(RegExp) 
 // 'gi' = case sensitive

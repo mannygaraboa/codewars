@@ -1,30 +1,44 @@
 function duplicateCount(text){
   let count = 0;
+  let firstArr = [];
+  let finalArr = [];
   for(let i = 0; i < text.length; i++)
   {
-    let bool = true;
     let currentChar = text.charAt(i);
-    let nextChar = text.charAt(i+1);
     let re = new RegExp(currentChar, 'g');
     let match = text.match(re).length;
-    console.log(match);
-    
-    for(let j = 1; j < text.length; j++)
+    let arr = [currentChar, match];
+    firstArr.push(arr);
+  }
+
+  finalArr.push(firstArr[0]);
+  if((finalArr[0])[1] > 1)
+  {
+    count++;
+  }
+
+  for(let i = 0; i < firstArr.length; i++)
+  {
+    let bool = true;
+    for(let j = 0; j < finalArr.length; j++)
     {
-      if(currentChar == text.charAt(j))
+      if((firstArr[i])[0] = ((finalArr[j])[0]))
       {
-        bool = true;
+        bool = false;
       }
     }
 
-    if(match > 1 && bool == true)
+    if(bool == true && (firstArr[i])[1] > 1)
     {
+      finalArr.push(firstArr[i])
       count++;
     }
   }
+
+  console.log(finalArr);
   return count;
 }
-duplicateCount("hexxxh");
+duplicateCount("helLo");
   
 // Syntax for match(): string.match(RegExp) 
 // 'gi' = case sensitive

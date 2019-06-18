@@ -37,9 +37,11 @@ function duplicateCount(text){
   }
   // console.log(firstArr);
   // console.log(finalArr);
+  console.log(count);
   return count;
 }
 duplicateCount("eEhHeElL123321o");
+
   
 // Syntax for match(): string.match(RegExp) 
 // 'gi' = case sensitive

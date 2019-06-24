@@ -6,13 +6,6 @@ function partsSums(ls) {
   {
     sumArray.push(i);
   }
-
-  while(ls.length > 0)
-  {
-    console.log(ls);
-    sumArray.push(ls);
-    ls.shift();
-  }
   
   for(let i = 0; i < ls.length; i++)
   {
@@ -24,6 +17,14 @@ function partsSums(ls) {
   }
   sumArray.push(sum);
   return sumArray;
-  return sumArray;
 }
 partsSums([1,3,5])
+
+// ls.shift();
+
+// while(ls.length > 0)
+// {
+//   console.log(ls);
+//   sumArray.push(ls);
+//   ls.shift();
+// }

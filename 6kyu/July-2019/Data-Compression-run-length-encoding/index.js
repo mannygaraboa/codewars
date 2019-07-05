@@ -39,22 +39,37 @@ function decode(input) {
     inputArr.push(currentChar);
   }
 
-  // For double digit numbers
-  for(let i = 0; i < input.length; i++)
+  // For numbers that are double digits or higher
+  for(let i = 0; i < inputArr.length; i++)
   {
-    if(inputArr[i] >= 0 && inputArr[i+1] >= 0)
+    let newNum = inputArr[i];
+    if(newNum >= 0)
     {
-      let newNum = inputArr[i].concat(inputArr[i+1]);
-      console.log(newNum);
-      newNumArr.push(newNum);
-      i++;
+      if(inputArr[i+1] >= 0)
+      {
+        while(inputArr[i+1] >= 0)
+        {
+          newNum = newNum.concat(inputArr[i+1]);
+          i++;
+          if(inputArr[i+1].match(/[a-z]/i))
+          {
+            // console.log("Pushing " + newNum + " into newNumArr")
+            newNumArr.push(newNum);
+            break;
+          }
+        }
+      }
+      else
+      {
+        newNumArr.push(newNum);
+      }
     }
     else
     {
       newNumArr.push(inputArr[i]);
     }
   }
-
+    
   // Actual decoding
   for(let i = 0; i < newNumArr.length; i++)
   {
@@ -70,13 +85,35 @@ function decode(input) {
   }
 
   let finalString = decodeArr.join("");
-  console.log(inputArr);
+  // console.log(inputArr);
   console.log(newNumArr);
   return finalString;
 }
-encode("aaaaaaaaaaaabbcaabbxx");    // Returns '12A2B1C2A2B2X'
-decode("10j4b12z2D");               // Returns 'JJJJJJJJJJBBBBZZZZZZZZZZZZDD'
+// encode("aaaaaaaaaaaabbcaabbxx");
+decode("10j20b12z2D");
 
 // Previous Method:
-// let re = new RegExp(currentChar, 'gi')
-// let match = text.match(re).length
+  // let re = new RegExp(currentChar, 'gi')
+  // let match = text.match(re).length
+
+// Previous Method for numbers that are double digits or higher:
+  // if(inputArr[i] >= 0 && inputArr[i+1] >= 0)
+  // {
+  //   let newNum = inputArr[i].concat(inputArr[i+1]);
+  //   console.log(newNum);
+  //   newNumArr.push(newNum);
+  //   i++;
+  // }
+  // else
+  // {
+  //   newNumArr.push(inputArr[i]);
+  // }
+
+// Shorter Solution:
+  // function encode(input) {
+  //   return input.replace(/(.)\1*/g, (match, p1) => match.length + p1);
+  // }
+
+  // function decode(input) {
+  //   return input.replace(/(\d+)(.)+?/g, (_, p1, p2) => p2.repeat(p1));
+  // }
